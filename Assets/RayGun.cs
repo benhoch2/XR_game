@@ -6,12 +6,14 @@ public class RayGun : MonoBehaviour
 {
     public OVRInput.RawButton fireButton;
     public LineRenderer linePrefab;
+    public GameObject rayImpactPrefab;
     public Transform shootingPoint;
     public float maxLineLength = 5f;
     public float lineShowTime = 0.3f;
     public LayerMask hitLayerMask;
     public AudioSource audioSource;
     public AudioClip fireSound;
+
 
     // Start is called before the first frame update
     void Start()
@@ -43,6 +45,9 @@ public class RayGun : MonoBehaviour
         {
             Debug.Log("Hit: " + hitInfo.collider.name);
             endPosition = hitInfo.point;
+
+            GameObject impact = Instantiate(rayImpactPrefab, hitInfo.point, Quaternion.LookRotation(-hitInfo.normal));
+            Destroy(impact, 1f);
         }
         else
         {

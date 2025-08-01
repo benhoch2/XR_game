@@ -1225,6 +1225,8 @@ MonoBehaviour:
   fireButton: 67108864
   linePrefab: {fileID: 2132622095439243454, guid: dcf93e0130643a1499b0c9095d4dfe82,
     type: 3}
+  rayImpactPrefab: {fileID: 4546608735908888433, guid: 5be5c53060e16f442bae32e83c30dfd3,
+    type: 3}
   shootingPoint: {fileID: 711512003}
   maxLineLength: 5
   lineShowTime: 0.3
