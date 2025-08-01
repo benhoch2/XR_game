@@ -10,6 +10,8 @@ public class RayGun : MonoBehaviour
     public float maxLineLength = 5f;
     public float lineShowTime = 0.3f;
     public LayerMask hitLayerMask;
+    public AudioSource audioSource;
+    public AudioClip fireSound;
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +31,9 @@ public class RayGun : MonoBehaviour
 
     public void Fire()
     {
+
+        audioSource.PlayOneShot(fireSound);
+
         Ray ray = new Ray(shootingPoint.position, shootingPoint.forward);
         bool hasHit = Physics.Raycast(ray, out RaycastHit hitInfo, maxLineLength, hitLayerMask);
 
