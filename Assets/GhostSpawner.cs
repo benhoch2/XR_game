@@ -58,13 +58,15 @@ public class GhostSpawner : MonoBehaviour
 
                 GameObject ghost = Instantiate(ghostPrefab, randomPositionNormalOffset, Quaternion.identity);
                 ghost.transform.LookAt(transform.position);
+                return;
+            }
+            else
+            {
+                Debug.LogWarning("Failed to find a valid position for ghost spawn after " + spawnTry + " attempts.");
+                currentTry++;
             }
         }
-        else
-        {
-            Debug.LogWarning("Failed to find a valid position for ghost spawn after " + spawnTry + " attempts.");
-            currentTry++;
-        }
+
 
 
 
