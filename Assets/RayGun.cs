@@ -46,8 +46,17 @@ public class RayGun : MonoBehaviour
             Debug.Log("Hit: " + hitInfo.collider.name);
             endPosition = hitInfo.point;
 
-            GameObject impact = Instantiate(rayImpactPrefab, hitInfo.point, Quaternion.LookRotation(-hitInfo.normal));
-            Destroy(impact, 1f);
+            MyGhost ghost = hitInfo.collider.GetComponentInParent<MyGhost>();
+            if (ghost != null)
+            {
+                ghost.Kill();
+            }
+            else
+            {
+                GameObject impact = Instantiate(rayImpactPrefab, hitInfo.point, Quaternion.LookRotation(-hitInfo.normal));
+                Destroy(impact, 1f);
+            }
+
         }
         else
         {
