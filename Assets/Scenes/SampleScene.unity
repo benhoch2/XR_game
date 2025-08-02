@@ -4677,6 +4677,56 @@ Transform:
   m_Children: []
   m_Father: {fileID: 714212142}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &793959286
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 793959288}
+  - component: {fileID: 793959289}
+  m_Layer: 0
+  m_Name: OrbSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &793959288
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 793959286}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.05178777, y: 0.23590267, z: -0.65677345}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &793959289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 793959286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 420a4a03baece7e4ebe7151cc27c7ddb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numberOfOrbsToSpawn: 3
+  orbPrefab: {fileID: 3539766559117080704, guid: e0056cfe2a0aff848a789d491093aafc,
+    type: 3}
+  height: 0.2
+  spawnedOrbs: []
+  maxSpawnAttempts: 100
 --- !u!1 &797932660
 GameObject:
   m_ObjectHideFlags: 0
@@ -11715,5 +11765,6 @@ SceneRoots:
   - {fileID: 49219717}
   - {fileID: 224888366}
   - {fileID: 1202314386}
+  - {fileID: 793959288}
   - {fileID: 1940671695}
   - {fileID: 309246206}
