@@ -46,4 +46,19 @@ public class OrbSpawner : MonoBehaviour
             spawnedOrbs.Add(orb);
         }
     }
+
+    public void DestroyOrb(GameObject orb)
+    {
+        if (spawnedOrbs.Contains(orb))
+        {
+            spawnedOrbs.Remove(orb);
+            Destroy(orb);
+        }
+
+        if (spawnedOrbs.Count == 0)
+        {
+            Debug.Log("All orbs have been destroyed");
+            UnityEngine.SceneManagement.SceneManager.LoadScene(0); // Load a game over scene or handle accordingly    
+        }
+    }
 }

@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class MyGhost : MonoBehaviour
 {
+    public float eatDstance = 0.3f;
     public NavMeshAgent agent;
     public float speed = 1f;
     public Animator animator;
@@ -31,6 +32,13 @@ public class MyGhost : MonoBehaviour
                 closestOrb = orb;
             }
         }
+
+        if (closestOrb != null && closestDistance < eatDstance)
+        {
+            OrbSpawner.Instance.DestroyOrb(closestOrb);
+            closestOrb = null; // Reset closestOrb if eaten
+        }
+
         return closestOrb;
     }
 
